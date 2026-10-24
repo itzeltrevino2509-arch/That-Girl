@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7dce8">
+<title>That Girl — Mi mejor versión</title>
+<style>
+:root{--pink:#eaa7c4;--pink2:#f8e6ee;--deep:#8d4567;--cream:#fffafc;--ink:#43343c;--muted:#897681;--green:#dcebdd;--line:#f0dce5}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff7fb,#fffaf7 65%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+.app{max-width:510px;margin:0 auto;min-height:100vh;padding:20px 16px 92px}
+header{display:flex;justify-content:space-between;align-items:center;margin:5px 2px 20px}.brand{font-size:12px;letter-spacing:2.4px;color:var(--deep);font-weight:800}.date{font-size:12px;color:var(--muted)}
+h1{font-size:29px;line-height:1.1;margin:8px 0;color:#5b3548}h2{font-size:20px;margin:0 0 12px}h3{font-size:15px;margin:0 0 8px}.sub{color:var(--muted);font-size:14px;line-height:1.5}
+.hero{background:linear-gradient(135deg,#f9dce8,#fff0f5);border-radius:25px;padding:22px;position:relative;overflow:hidden;box-shadow:0 8px 24px #dca6bc20}.hero:after{content:"♡";position:absolute;right:17px;top:4px;font-size:92px;color:#fff8;transform:rotate(12deg)}
+.progressrow{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:13px;font-weight:700;position:relative;z-index:1}.bar{height:9px;border-radius:99px;background:#ffffffb8;margin-top:9px;overflow:hidden}.fill{height:100%;width:0;background:var(--deep);border-radius:99px;transition:width .25s}
+.nav{display:flex;gap:8px;overflow:auto;margin:18px 0 20px;padding-bottom:2px}.nav button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;color:var(--muted);font-weight:700;white-space:nowrap}.nav button.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+.card{background:#fff;border:1px solid #f3e5eb;border-radius:20px;padding:16px;margin:12px 0;box-shadow:0 4px 18px #7e405010}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.tag{font-size:11px;border-radius:999px;background:var(--pink2);color:var(--deep);padding:6px 9px;font-weight:800}
+.habit{display:flex;align-items:flex-start;gap:10px;padding:11px 0;border-bottom:1px solid #f7edf1}.habit:last-child{border-bottom:0}.habit input{appearance:none;flex:0 0 22px;width:22px;height:22px;border:1.7px solid #dcb8c9;border-radius:7px;margin:0;cursor:pointer}.habit input:checked{background:var(--deep);border-color:var(--deep)}.habit input:checked:after{content:"✓";display:block;color:white;text-align:center;font-size:15px;line-height:20px}.habit label{font-size:14px;line-height:1.35;cursor:pointer;flex:1}.hint{font-size:12px;color:var(--muted);display:block;margin-top:4px;line-height:1.4}
+button{font:inherit;cursor:pointer}.primary{border:0;background:var(--deep);color:#fff;border-radius:13px;padding:12px 15px;font-weight:750}.secondary{border:1px solid var(--line);background:#fff;color:var(--deep);border-radius:12px;padding:10px 12px;font-weight:700}.full{width:100%;margin-top:10px}
+textarea,input[type=text],select{width:100%;border:1px solid var(--line);background:#fffafd;border-radius:12px;padding:12px;color:var(--ink);font:inherit;outline-color:var(--pink);margin:6px 0 10px}textarea{min-height:72px;resize:vertical}.mealgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.meal{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px}.meal .emoji{font-size:24px}.meal p{font-size:12px;color:var(--muted);line-height:1.4;margin:6px 0}.meal strong{font-size:14px}.facts{background:#fff3f7;border:1px solid #f4d6e3;border-radius:19px;padding:17px;margin:12px 0}.facts .eyebrow{font-size:11px;letter-spacing:1.4px;font-weight:900;color:var(--deep)}.facts h3{font-size:18px;line-height:1.3;margin:9px 0}.facts p{font-size:14px;line-height:1.55;margin:7px 0}.note{font-size:12px;color:var(--muted);line-height:1.5;background:#fbf7f9;border-radius:12px;padding:11px;margin-top:10px}.water{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.water button{border:1px solid var(--line);border-radius:12px;background:#fff;padding:12px 0;color:var(--muted)}.water button.on{background:#e3f2f4;border-color:#9ccbd1;color:#285b61}.hidden{display:none!important}.section-title{margin:20px 2px 8px}.small{font-size:12px;color:var(--muted)}.footer{text-align:center;font-size:11px;color:#a18d98;padding:20px 10px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fffdfbf0;backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:3}.bottomin{max-width:510px;width:100%;display:flex;justify-content:space-around;padding:10px 5px calc(10px + env(safe-area-inset-bottom))}.bottom button{border:0;background:none;color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:4px}.bottom button b{font-size:21px;font-weight:500}.bottom button.active{color:var(--deep)}
+@media(min-width:700px){.app{padding-top:30px}.hero{padding:28px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand">THAT GIRL <span style="color:#d58aac">♡</span></div><div class="date" id="date"></div></header>
+<section class="hero">
+  <div style="position:relative;z-index:1"><div class="tag" style="background:#ffffffb8">TU ESPACIO DE BIENESTAR</div>
+  <h1>Mi mejor versión<br>empieza conmigo ✨</h1>
+  <div class="sub" style="max-width:290px;color:#795b6a">No necesitas hacerlo perfecto. Solo dar un pasito por ti hoy.</div></div>
+  <div class="progressrow"><span>Mi progreso de hoy</span><span id="progressText">0%</span></div><div class="bar"><div class="fill" id="progressFill"></div></div>
+</section>
+<nav class="nav">
+<button class="active" data-page="hoy">Mi día</button><button data-page="comida">Comida rica</button><button data-page="aprender">Aprender</button><button data-page="cuidado">Autocuidado</button><button data-page="progreso">Progreso</button><button data-page="fotos">Fotos</button>
+</nav>
+<main>
+<section id="page-hoy">
+<div class="section-title"><h2>Hola, bonita 🌷</h2><div class="sub">Marca lo que ya hiciste. Tu avance se guarda en este dispositivo.</div></div>
+<div class="card"><div class="cardhead"><h3>🥗 Mi alimentación</h3><span class="tag">Sin culpa</span></div>
+<div id="foodHabits"></div>
+<div class="small">Anota qué comiste para conocerte mejor, no para juzgarte.</div>
+<label for="foodNotes" class="small">Mi registro de comidas</label><textarea id="foodNotes" placeholder="Desayuno, almuerzo, comida, cena o snacks…"></textarea><button class="secondary" id="saveFood">Guardar registro</button><span id="foodSaved" class="small"></span>
+</div>
+<div class="card"><div class="cardhead"><h3>💧 Mi hidratación</h3><span class="tag" id="waterCount">0 vasos</span></div><p class="sub">Registra tus vasos. No tienes que forzarte a tomar exactamente 3 litros; tus necesidades dependen de tu cuerpo, actividad y clima.</p><div class="water" id="waterButtons"></div><div class="small" style="margin-top:10px" id="waterText">Cada vaso cuenta 💦</div></div>
+<div class="card"><div class="cardhead"><h3>🏋🏻‍♀️ Movimiento</h3><span class="tag">A tu ritmo</span></div>
+<div class="habit"><input type="checkbox" id="gym"><label for="gym">Fui al gym o hice movimiento<span class="hint">El descanso también forma parte de una vida saludable. No hace falta entrenar todos los días.</span></label></div>
+<div class="habit"><input type="checkbox" id="rest"><label for="rest">Respeté mi descanso<span class="hint">Dormir y recuperarte también es cuidarte.</span></label></div></div>
+<div class="card"><div class="cardhead"><h3>📚 Mi voz y mi confianza</h3><span class="tag">10 minutos</span></div>
+<div class="habit"><input type="checkbox" id="read"><label for="read">Leí en voz alta para mejorar mi fluidez<span class="hint">Lee despacio, haz pausas en las comas y al final resume lo leído con tus palabras.</span></label></div>
+<div class="habit"><input type="checkbox" id="speak"><label for="speak">Practiqué hablar con calma<span class="hint">Puedes grabarte un minuto hablando de tu día y escucharte sin criticarte.</span></label></div></div>
+</section>
+<section id="page-comida" class="hidden">
+<h2>Ideas de desayunos saludables 🍓</h2><p class="sub">Opciones sencillas, ricas y flexibles. Combina proteína, carbohidratos, fruta o verdura y grasas que te gusten.</p>
+<div class="mealgrid">
+<div class="meal"><div class="emoji">🍳</div><strong>Huevito con tortillas</strong><p>2 huevos con jitomate y espinaca, tortillas y una fruta.</p><button class="secondary" onclick="addMeal('Desayuno: huevos con verduras, tortillas y fruta')">Elegir</button></div>
+<div class="meal"><div class="emoji">🥣</div><strong>Yogur con fruta</strong><p>Yogur griego natural, avena, plátano o fresas y nueces.</p><button class="secondary" onclick="addMeal('Desayuno: yogur con fruta, avena y nueces')">Elegir</button></div>
+<div class="meal"><div class="emoji">🥑</div><strong>Pan con aguacate</strong><p>Pan integral, aguacate y huevo; acompaña con fruta.</p><button class="secondary" onclick="addMeal('Desayuno: pan integral con aguacate y huevo')">Elegir</button></div>
+<div class="meal"><div class="emoji">🌮</div><strong>Tacos de frijoles</strong><p>Tortillas con frijoles, queso fresco y pico de gallo.</p><button class="secondary" onclick="addMeal('Desayuno: tacos de frijoles con queso y pico de gallo')">Elegir</button></div>
+<div class="meal"><div class="emoji">🥤</div><strong>Licuado completo</strong><p>Leche o bebida fortificada, plátano, avena y crema de cacahuate.</p><button class="secondary" onclick="addMeal('Desayuno: licuado de leche, plátano, avena y crema de cacahuate')">Elegir</button></div>
+<div class="meal"><div class="emoji">🧀</div><strong>Quesadillas</strong><p>Quesadillas con champiñones o calabacita y una fruta.</p><button class="secondary" onclick="addMeal('Desayuno: quesadillas con verduras y fruta')">Elegir</button></div>
+</div>
+<div class="card"><h3>🍽️ ¿Qué se te antoja hoy?</h3><p class="sub">La comida saludable no tiene que ser cara ni complicada. Puedes adaptar porciones a tu hambre y tus necesidades.</p><label class="small" for="craving">Ingredientes que tienes en casa</label><input type="text" id="craving" placeholder="Ej. huevo, tortillas, avena, plátano"><button class="primary full" onclick="suggestMeal()">Dame una idea con eso ✨</button><p id="mealSuggestion" class="sub"></p></div>
+<div class="card"><h3>📝 Mi diario de comida</h3><p class="sub">Usa este espacio para anotar qué comiste y cómo te sentiste. No necesitas contar calorías para cuidarte.</p><textarea id="foodNotes2" placeholder="Hoy desayuné…"></textarea><button class="primary" onclick="saveFood2()">Guardar</button></div>
+</section>
+<section id="page-aprender" class="hidden">
+<h2>Pequeños datos, grandes aprendizajes 🧠</h2><p class="sub">Curiosidades de nutrición, cuerpo, hábitos y comunicación. Aprende algo nuevo cada día.</p>
+<div class="facts"><div class="eyebrow">🍍 DATO CURIOSO · ALIMENTACIÓN</div><h3>La piña contiene bromelina</h3><p>La bromelina es un conjunto de enzimas que ayudan a descomponer proteínas. La piña también aporta vitamina C, agua y carbohidratos.</p><p><b>¿Y el pH vaginal?</b> No hay evidencia científica sólida de que tomar jugo de piña cambie de forma predecible el pH, el olor o el sabor de las secreciones vaginales. La vagina tiene un equilibrio natural propio.</p><div class="note">✨ Qué recordar: disfruta la piña porque te gusta; no necesitas tomarla por una promesa de cambiar tu cuerpo.</div></div>
+<div class="facts"><div class="eyebrow">💧 DATO CURIOSO · HIDRATACIÓN</div><h3>El agua también llega de los alimentos</h3><p>Frutas, verduras, sopas y otras bebidas contribuyen a la hidratación. Las necesidades cambian con el calor, el ejercicio y cada persona.</p><div class="note">✨ Consejo: toma agua durante el día y escucha tu sed. No te obligues a beber cantidades excesivas rápidamente.</div></div>
+<div class="facts"><div class="eyebrow">🍳 DATO CURIOSO · DESAYUNO</div><h3>La proteína no tiene que venir de un suplemento</h3><p>Huevos, yogur, leche, frijoles, queso, tofu y frutos secos pueden aportar proteína. Combinarla con alimentos ricos en fibra ayuda a hacer desayunos variados y satisfactorios.</p><div class="note">✨ Idea: huevos con frijoles y tortillas forman un desayuno práctico, económico y nutritivo.</div></div>
+<div class="facts"><div class="eyebrow">🗣️ DATO CURIOSO · COMUNICACIÓN</div><h3>Practicar en voz alta puede ayudarte</h3><p>Leer un texto breve en voz alta, respetar la puntuación y resumirlo después te da oportunidades para practicar ritmo, claridad y vocabulario. No necesitas hablar rápido para expresarte bien.</p><div class="note">✨ Reto de hoy: lee durante 5 minutos y explica en voz alta la idea principal en tus propias palabras.</div></div>
+<div class="card"><h3>🌱 Mi aprendizaje de hoy</h3><textarea id="learnNote" placeholder="¿Qué aprendí? ¿Qué quiero recordar?"></textarea><button class="primary" onclick="saveLearn()">Guardar aprendizaje</button></div>
+<p class="small">La información es educativa y general; no sustituye una consulta médica o nutricional.</p>
+</section>
+<section id="page-cuidado" class="hidden">
+<h2>Mi ritual de autocuidado 🧴</h2><p class="sub">Cuidarte puede ser sencillo. Marca lo que hiciste hoy y adapta la rutina a tu piel, cabello y necesidades.</p>
+<div class="card"><h3>🫧 Piel y cuerpo</h3>
+<div class="habit"><input type="checkbox" id="face"><label for="face">Me puse crema facial<span class="hint">Usa un producto adecuado para tu tipo de piel. Por la mañana, considera protector solar.</span></label></div>
+<div class="habit"><input type="checkbox" id="body"><label for="body">Me puse crema corporal<span class="hint">Después de bañarte puede ayudar a mantener la hidratación de la piel.</span></label></div>
+<div class="habit"><input type="checkbox" id="hair"><label for="hair">Hice mi cuidado capilar<span class="hint">Mascarilla solo cuando toque según tu tipo de cabello y las instrucciones del producto.</span></label></div>
+<div class="habit"><input type="checkbox" id="lashes"><label for="lashes">Cuidé mis pestañas de forma segura<span class="hint">Evita poner aceites dentro del ojo o en la línea de agua. Los aceites pueden irritar; suspende si notas enrojecimiento o ardor.</span></label></div>
+<div class="habit"><input type="checkbox" id="pineapple"><label for="pineapple">Comí fruta o disfruté mi jugo de piña si se me antojó<span class="hint">Es opcional; no es un tratamiento para el pH vaginal.</span></label></div>
+</div>
+<div class="card"><h3>🌙 Mi cierre del día</h3><div class="habit"><input type="checkbox" id="pause"><label for="pause">Me regalé 5 minutos sin exigencias</label></div><div class="habit"><input type="checkbox" id="kind"><label for="kind">Me hablé con amabilidad</label></div><label class="small" for="mood">¿Cómo me sentí hoy?</label><select id="mood"><option value="">Elige una opción</option><option>🌷 En paz</option><option>😊 Con energía</option><option>😮‍💨 Cansada</option><option>💗 Orgullosa de mí</option><option>🌧️ Un día difícil</option></select><textarea id="journal" placeholder="Algo que hice bien hoy, aunque haya sido pequeño…"></textarea><button class="primary full" onclick="saveJournal()">Guardar mi reflexión</button></div>
+</section>
+
+<section id="page-progreso" class="hidden">
+<h2>Mi progreso mensual 📅</h2>
+<p class="sub">Cada día tendrá un color según los hábitos que registres. Los días futuros y los días sin información se mostrarán en gris.</p>
+<div class="card">
+<div class="cardhead"><button class="secondary" id="prevMonth">‹</button><h3 id="monthLabel" style="margin:0;text-transform:capitalize"></h3><button class="secondary" id="nextMonth">›</button></div>
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:11px;color:var(--muted);margin-bottom:8px"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+<div id="calendarGrid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px"></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:var(--muted)">
+<span>🟢 Cumplí todo</span><span>🟡 Cumplí una parte</span><span>🔴 No cumplí mis hábitos</span><span>⚪ Sin registro</span>
+</div>
+<div class="note">Los colores se calculan con los hábitos que marques. Un día rojo no significa que hayas fallado como persona: solo indica que ese día no completaste tus objetivos. Puedes volver a empezar al día siguiente.</div>
+</div>
+<div class="card" id="dayDetails"><h3>Selecciona un día</h3><p class="sub">Toca una fecha para ver el resumen de hábitos registrados.</p></div>
+<div class="card"><h3>🌱 Mi resumen</h3><p class="sub" id="monthSummary">Aquí aparecerá tu resumen mensual.</p></div>
+</section>
+
+
+<section id="page-fotos" class="hidden">
+<h2>Mi evolución en fotos 📸</h2>
+<p class="sub">Una vez por semana, registra tu progreso con fotos tomadas en condiciones parecidas. Esta sección es para observar cambios con curiosidad y cariño, no para juzgar tu cuerpo.</p>
+<div class="facts"><div class="eyebrow">🌷 TU RETO SEMANAL</div><h3>Semana <span id="photoWeekNumber">1</span>: hoy documentas tu punto de partida</h3><p>Elige un día de la semana y, si te sientes cómoda, toma estas cuatro fotos:</p></div>
+<div class="card">
+<div class="habit"><div style="font-size:24px">🧍🏻‍♀️</div><label><b>1. Ahora de frente</b><span class="hint">Párate relajada, con los brazos a los lados y la cámara a la altura del torso.</span></label></div>
+<div class="habit"><div style="font-size:24px">↔️</div><label><b>2. Ahora de lado</b><span class="hint">Gira de perfil, mantén una postura natural y respira normalmente.</span></label></div>
+<div class="habit"><div style="font-size:24px">🔄</div><label><b>3. Ahora de espaldas</b><span class="hint">Colócate de espaldas a la cámara, con los brazos relajados.</span></label></div>
+<div class="habit"><div style="font-size:24px">💪🏻</div><label><b>4. Una foto opcional de tu postura o músculo</b><span class="hint">Por ejemplo, de perfil con postura natural o flexionando los brazos si así lo deseas. No es obligatoria.</span></label></div>
+<div class="note">📌 Para comparar de forma más justa: usa la misma luz, distancia, ropa similar y una postura natural. No necesitas posar, apretar el abdomen ni cambiar tu alimentación para “verte mejor” en la foto.</div>
+</div>
+<div class="card"><h3>📅 Registrar fotos de esta semana</h3><p class="sub">Selecciona las fotos que quieras conservar en este dispositivo. La aplicación no las sube a internet.</p>
+<label class="small" for="photoDate">Fecha de registro</label><input type="date" id="photoDate">
+<label class="small" for="frontPhoto">De frente</label><input type="file" id="frontPhoto" accept="image/*">
+<label class="small" for="sidePhoto">De lado</label><input type="file" id="sidePhoto" accept="image/*">
+<label class="small" for="backPhoto">De espaldas</label><input type="file" id="backPhoto" accept="image/*">
+<label class="small" for="extraPhoto">Foto opcional</label><input type="file" id="extraPhoto" accept="image/*">
+<button class="primary full" id="savePhotos">Guardar fotos de esta semana ♡</button>
+<p class="small" id="photoStatus"></p>
+</div>
+<div class="card"><div class="cardhead"><h3>🗂️ Mi álbum semanal</h3><span class="tag">Privado en este dispositivo</span></div><div id="photoAlbum"><p class="sub">Aún no tienes fotos guardadas. Puedes comenzar cuando te sientas lista.</p></div></div>
+<div class="note">Las fotos de tu cuerpo son información personal. Se guardan solo en este navegador/dispositivo; si borras sus datos, cambias de navegador o dispositivo, podrías perderlas. No necesitas compartirlas con nadie. El progreso también se mide por fuerza, energía, hábitos y cómo te sientes.</div>
+</section>
+
+</main>
+<div class="footer">Un hábito a la vez, con cariño. ♡<br>Tu progreso no define tu valor.</div>
+</div>
+<div class="bottom"><div class="bottomin"><button class="active" data-page="hoy"><b>♡</b>Mi día</button><button data-page="comida"><b>🍓</b>Comida</button><button data-page="aprender"><b>✧</b>Aprender</button><button data-page="cuidado"><b>🌷</b>Autocuidado</button><button data-page="progreso"><b>▦</b>Progreso</button><button data-page="fotos"><b>📸</b>Fotos</button></div></div>
+<script>
+const today=new Date(); document.getElementById('date').textContent=today.toLocaleDateString('es-MX',{weekday:'short',day:'numeric',month:'short'});
+const foodList=[['breakfast','¿Ya desayunaste?','Registra qué comiste, sin juzgarte.'],['brunch','¿Ya almorzaste?','¿Qué almorzaste?'],['lunch','¿Ya comiste?','Tu comida principal o lo que hayas comido.'],['dinner','¿Ya cenaste?','Cena lo suficiente para sentirte satisfecha.']];
+const foodHabits=document.getElementById('foodHabits');
+foodList.forEach(([id,title,hint])=>{let row=document.createElement('div');row.className='habit';row.innerHTML=`<input type="checkbox" id="${id}"><label for="${id}">${title}<span class="hint">${hint}</span></label>`;foodHabits.appendChild(row)});
+const checks=[...document.querySelectorAll('input[type=checkbox]')];
+const keys=checks.map(x=>x.id);
+function dayKey(){return 'thatgirl-'+new Date().toISOString().slice(0,10)}
+function load(){let data={};try{data=JSON.parse(localStorage.getItem(dayKey())||'{}')}catch(e){};checks.forEach(c=>c.checked=!!data[c.id]);document.getElementById('foodNotes').value=data.foodNotes||'';document.getElementById('foodNotes2').value=data.foodNotes||'';document.getElementById('learnNote').value=data.learnNote||'';document.getElementById('journal').value=data.journal||'';document.getElementById('mood').value=data.mood||'';water=data.water||0;renderWater();progress();}
+function save(){let data={};checks.forEach(c=>data[c.id]=c.checked);data.foodNotes=document.getElementById('foodNotes').value||document.getElementById('foodNotes2').value;data.learnNote=document.getElementById('learnNote').value;data.journal=document.getElementById('journal').value;data.mood=document.getElementById('mood').value;data.water=water;localStorage.setItem(dayKey(),JSON.stringify(data));progress();}
+function progress(){let relevant=checks.length;let done=checks.filter(c=>c.checked).length;let pct=Math.round(done/relevant*100);document.getElementById('progressText').textContent=pct+'%';document.getElementById('progressFill').style.width=pct+'%'}
+checks.forEach(c=>c.addEventListener('change',save));
+let water=0;function renderWater(){let box=document.getElementById('waterButtons');box.innerHTML='';for(let i=1;i<=8;i++){let b=document.createElement('button');b.className=i<=water?'on':'';b.textContent=i<=water?'✓ Vaso '+i:'＋ Vaso '+i;b.onclick=()=>{water=i===water?i-1:i;renderWater();save()};box.appendChild(b)}document.getElementById('waterCount').textContent=water+' vasos';document.getElementById('waterText').textContent=water===0?'Cada vaso cuenta 💦':water+' de 8 vasos registrados · Ajusta el tamaño de vaso a tu realidad.'}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{let p=b.dataset.page;document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));document.getElementById('page-'+p).classList.remove('hidden');document.querySelectorAll('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===p));window.scrollTo({top:0,behavior:'smooth'})}));
+document.getElementById('saveFood').onclick=()=>{document.getElementById('foodNotes2').value=document.getElementById('foodNotes').value;save();document.getElementById('foodSaved').textContent=' Guardado ♡';setTimeout(()=>document.getElementById('foodSaved').textContent='',1800)};
+function addMeal(s){let box=document.getElementById('foodNotes2');box.value=(box.value?box.value+'\n':'')+s;document.querySelectorAll('[data-page]').forEach(x=>{if(x.dataset.page==='comida')x.classList.add('active')});saveFood2();document.getElementById('mealSuggestion').textContent='Añadido a tu diario ♡'}
+function suggestMeal(){let v=document.getElementById('craving').value.toLowerCase();let s='';if(/huevo|tortilla|frijol/.test(v))s='Prueba tacos de huevo con frijoles, pico de gallo y una fruta.';else if(/avena|plátano|platano|leche|yogur/.test(v))s='Prepara avena con leche o yogur, plátano y un poco de crema de cacahuate o nueces.';else if(/pollo|arroz|verdura/.test(v))s='Arma un bowl de pollo, arroz y verduras; agrega aguacate o limón para dar sabor.';else if(/pan|queso|aguacate/.test(v))s='Haz pan tostado o quesadillas con queso y aguacate, acompañados de fruta o verduras.';else s='Cuéntame qué ingredientes tienes y combínalos: una fuente de proteína, un cereal o tortilla, y fruta o verdura es un buen punto de partida.';document.getElementById('mealSuggestion').textContent=s}
+function saveFood2(){document.getElementById('foodNotes').value=document.getElementById('foodNotes2').value;save();alert('Tu registro quedó guardado ♡')}
+function saveLearn(){save();alert('Aprendizaje guardado ♡')}
+function saveJournal(){save();alert('Tu reflexión quedó guardada ♡')}
+
+let calendarMonth = new Date(); calendarMonth.setDate(1);
+let selectedDay = new Date().toISOString().slice(0,10);
+function getDayData(key){try{return JSON.parse(localStorage.getItem('thatgirl-'+key)||'null')}catch(e){return null}}
+function statusFor(key){
+ const d=getDayData(key); if(!d) return 'empty';
+ const day=new Date(key+'T12:00:00'); const todayD=new Date(); todayD.setHours(0,0,0,0);
+ if(day>todayD) return 'future';
+ const allChecks=[...document.querySelectorAll('input[type=checkbox]')].map(c=>c.id);
+ const relevant=allChecks.filter(id=>Object.prototype.hasOwnProperty.call(d,id));
+ if(relevant.length===0) return 'empty';
+ const done=relevant.filter(id=>d[id]).length;
+ if(done===0) return 'red';
+ if(done===relevant.length && relevant.length>=allChecks.length) return 'green';
+ return 'yellow';
+}
+function renderCalendar(){
+ const year=calendarMonth.getFullYear(), month=calendarMonth.getMonth();
+ document.getElementById('monthLabel').textContent=calendarMonth.toLocaleDateString('es-MX',{month:'long',year:'numeric'});
+ const grid=document.getElementById('calendarGrid');grid.innerHTML='';
+ let first=(new Date(year,month,1).getDay()+6)%7;let days=new Date(year,month+1,0).getDate();
+ for(let i=0;i<first;i++){let blank=document.createElement('div');grid.appendChild(blank)}
+ for(let d=1;d<=days;d++){
+  let key=year+'-'+String(month+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+  let status=statusFor(key);let b=document.createElement('button');b.textContent=d;
+  b.style.cssText='aspect-ratio:1;border-radius:11px;border:1px solid #eee;background:#f6f2f4;color:#8e8088;font-weight:700;padding:0;font-size:13px';
+  if(status==='green')b.style.cssText+=';background:#d9efdc;border-color:#9acda2;color:#285b35';
+  if(status==='yellow')b.style.cssText+=';background:#fff0bd;border-color:#e6ce70;color:#7a5b00';
+  if(status==='red')b.style.cssText+=';background:#f7d7d7;border-color:#e9aaaa;color:#8a3434';
+  if(status==='future')b.style.cssText+=';opacity:.35';
+  if(key===selectedDay)b.style.outline='2px solid #8d4567';
+  b.onclick=()=>{selectedDay=key;renderCalendar();renderDayDetails(key)};grid.appendChild(b);
+ }
+ let greens=0,yellows=0,reds=0,logged=0;
+ for(let d=1;d<=days;d++){let key=year+'-'+String(month+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');let st=statusFor(key);if(st==='green'){greens++;logged++}if(st==='yellow'){yellows++;logged++}if(st==='red'){reds++;logged++}}
+ document.getElementById('monthSummary').textContent=`Este mes: ${greens} día(s) verdes, ${yellows} amarillo(s), ${reds} rojo(s) y ${logged} día(s) con registro. Los días sin registro no se cuentan como fallos.`;
+ renderDayDetails(selectedDay);
+}
+function renderDayDetails(key){
+ const box=document.getElementById('dayDetails'),d=getDayData(key);
+ const date=new Date(key+'T12:00:00').toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ if(!d){box.innerHTML=`<h3>${date}</h3><p class="sub">No hay registro guardado para este día. Los días sin registro quedan grises, no rojos.</p>`;return}
+ const labels={breakfast:'Desayuné',brunch:'Almorcé',lunch:'Comí',dinner:'Cené',gym:'Fui al gym o hice movimiento',rest:'Respeté mi descanso',read:'Leí en voz alta',speak:'Practiqué hablar',face:'Crema facial',body:'Crema corporal',hair:'Cuidado capilar',lashes:'Cuidado seguro de pestañas',pineapple:'Fruta/jugo si se me antojó',pause:'Me di 5 minutos',kind:'Me hablé con amabilidad'};
+ const items=Object.keys(labels).filter(id=>Object.prototype.hasOwnProperty.call(d,id));
+ let st=statusFor(key),word=st==='green'?'🟢 Cumplí todo':st==='yellow'?'🟡 Cumplí una parte':st==='red'?'🔴 No completé mis hábitos':'⚪ Sin registro';
+ box.innerHTML=`<h3>${date}</h3><p><b>${word}</b></p>`+items.map(id=>`<div style="padding:6px 0;border-bottom:1px solid #f5eaf0;font-size:13px">${d[id]?'✅':'▫️'} ${labels[id]}</div>`).join('')+(d.foodNotes?`<p class="sub" style="margin-top:10px"><b>Registro de comidas:</b><br>${escapeHtml(d.foodNotes).replace(/\n/g,'<br>')}</p>`:'')+(d.journal?`<p class="sub"><b>Reflexión:</b> ${escapeHtml(d.journal)}</p>`:'');
+}
+function escapeHtml(str){return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+document.getElementById('prevMonth').onclick=()=>{calendarMonth.setMonth(calendarMonth.getMonth()-1);renderCalendar()};
+document.getElementById('nextMonth').onclick=()=>{calendarMonth.setMonth(calendarMonth.getMonth()+1);renderCalendar()};
+
+
+const photoInputs=['frontPhoto','sidePhoto','backPhoto','extraPhoto'];
+const photoLabels=['De frente','De lado','De espaldas','Foto opcional'];
+document.getElementById('photoDate').value=new Date().toISOString().slice(0,10);
+function getPhotoRecords(){try{return JSON.parse(localStorage.getItem('thatgirl-photos')||'[]')}catch(e){return []}}
+function renderPhotos(){
+ const records=getPhotoRecords();const album=document.getElementById('photoAlbum');
+ document.getElementById('photoWeekNumber').textContent=Math.max(1,records.length+1);
+ if(!records.length){album.innerHTML='<p class="sub">Aún no tienes fotos guardadas. Puedes comenzar cuando te sientas lista.</p>';return}
+ album.innerHTML='';
+ records.slice().reverse().forEach((r,ri)=>{
+  const card=document.createElement('div');card.style.cssText='border:1px solid var(--line);border-radius:14px;padding:12px;margin:10px 0';
+  const title=document.createElement('h3');title.textContent='Semana · '+r.date;card.appendChild(title);
+  const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px';
+  r.photos.forEach((src,i)=>{if(!src)return;const wrap=document.createElement('div');const img=document.createElement('img');img.src=src;img.alt=photoLabels[i];img.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:#f8e6ee';const cap=document.createElement('div');cap.className='small';cap.textContent=photoLabels[i];wrap.append(img,cap);grid.appendChild(wrap)});
+  card.appendChild(grid);const del=document.createElement('button');del.className='secondary';del.style.marginTop='10px';del.textContent='Eliminar esta semana';del.onclick=()=>{if(confirm('¿Eliminar las fotos de esta semana?')){let all=getPhotoRecords();all.splice(all.length-1-ri,1);localStorage.setItem('thatgirl-photos',JSON.stringify(all));renderPhotos()}};card.appendChild(del);album.appendChild(card)
+ });
+}
+document.getElementById('savePhotos').onclick=async()=>{
+ const date=document.getElementById('photoDate').value;if(!date){alert('Elige la fecha de esta semana.');return}
+ const files=photoInputs.map(id=>document.getElementById(id).files[0]||null);
+ if(!files.some(Boolean)){alert('Selecciona al menos una foto para guardar.');return}
+ const existing=getPhotoRecords();const weekPhotos=[];
+ for(const f of files){if(!f){weekPhotos.push(null);continue} if(f.size>4*1024*1024){alert('Cada foto debe pesar menos de 4 MB para guardarse con mayor facilidad.');return}
+  const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(f)});
+  weekPhotos.push(data);
+ }
+ const idx=existing.findIndex(r=>r.date===date);
+ const record={date,photos:weekPhotos};
+ if(idx>=0)existing[idx]=record;else existing.push(record);
+ try{localStorage.setItem('thatgirl-photos',JSON.stringify(existing));document.getElementById('photoStatus').textContent='Tus fotos quedaron guardadas en este dispositivo ♡';photoInputs.forEach(id=>document.getElementById(id).value='');renderPhotos()}
+ catch(e){document.getElementById('photoStatus').textContent='No hubo espacio suficiente para guardar las imágenes. Prueba con fotos más pequeñas.'}
+};
+
+load();
+renderCalendar();
+renderPhotos();
+</script>
+</body>
+</html>
